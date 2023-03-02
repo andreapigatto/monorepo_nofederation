@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Running the check scripts (lint + type-check) for only packages that changed
+lerna run --concurrency 1 --stream type-check --since HEAD --exclude-dependents
+lerna run --concurrency 1 --stream lint --since HEAD --exclude-dependents

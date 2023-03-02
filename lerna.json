@@ -1,0 +1,15 @@
+{
+  "packages": ["packages/*"],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "allowBranch": "*",
+      "message": "chore(release): version %v",
+      "yes": true
+    }
+  },
+  "useNx": false,
+  "version": "0.0.1"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "root",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "version-packages": "lerna version --no-push --force-publish",
+    "reset-cache": "yarn cache clean",
+    "reset": "rm -rf node_modules && lerna clean --yes && yarn reset-cache",
+    "reinit": "yarn reset && lerna bootstrap",
+    "commit": "git-cz",
+    "prepare": "husky install",
+    "lint": "lerna run --concurrency 1 --stream lint:fix",
+    "lint:fix": "yarn lint",
+    "type-check": "lerna run --concurrency 1 --stream type-check",
+    "test": "jest",
+    "build-packages": "lerna run --concurrency 1 --stream build"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lerna": "^6.5.1",
+    "prettier": "^2.8.4",
+    "standard-version": "^9.5.0",
+    "typescript": "^4.9.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
