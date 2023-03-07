@@ -1,4 +1,4 @@
-import { Button, Title } from '@company/shared'
+import { Title } from '@company/shared'
 
 const App = () => (
   <div className="App1">
